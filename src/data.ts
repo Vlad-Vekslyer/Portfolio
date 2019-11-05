@@ -1,8 +1,14 @@
+import Crows from "./assets/Crows.png"
+import Charity from "./assets/Charity.png"
+import Doggy from "./assets/Doggy.png"
+
 export interface Description {
   readonly name: string,
   readonly body: string,
   readonly demoLink?: string,
-  readonly githubLink: string
+  readonly githubLink: string,
+  readonly tools: string[],
+  readonly album: any[]
 }
 
 const data: {[index: string] : Description} = {
@@ -15,7 +21,9 @@ const data: {[index: string] : Description} = {
   it! Simply read the current story and play a card to
   respond to the circumstances presented to you.`,
     demoLink: "https://the-crows.herokuapp.com/",
-    githubLink: "https://github.com/Vlad-Vekslyer/The-Crows"
+    githubLink: "https://github.com/Vlad-Vekslyer/The-Crows",
+    tools: ["HTML5", "CSS3", "TypeScript", "React", "Node.js", "Express.js", "MySQL"],
+    album: [Crows]
   },
   Charity: {
     name: "BC Charity Portal",
@@ -26,7 +34,9 @@ const data: {[index: string] : Description} = {
   communicate with each other and the NPOs have control
   over the content they present.`,
     demoLink: "https://bc-charity-portal.herokuapp.com",
-    githubLink: "https://github.com/Vlad-Vekslyer/BC-Charity-Portal"
+    githubLink: "https://github.com/Vlad-Vekslyer/BC-Charity-Portal",
+    tools: ["HTML5", "CSS3", "JavaScript", "jQuery", "Node.js", "Express.js", "MongoDB"],
+    album: [Charity]
   },
   Doggy: {
     name: "Go Doggy",
@@ -34,7 +44,9 @@ const data: {[index: string] : Description} = {
   Go Doggy aims to make it easier for people to volunteer
   to take sheltered dogs on walks as well as act as a platform
   to showcase the dogs that need to be adopted.`,
-    githubLink: "https://github.com/Vlad-Vekslyer/VanHack-2019"
+    githubLink: "https://github.com/Vlad-Vekslyer/VanHack-2019",
+    tools: ["React Native","JavaScript", "Node.js", "Express.js", "MongoDB"],
+    album: [Doggy]
   }
 }
 

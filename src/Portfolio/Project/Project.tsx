@@ -8,7 +8,7 @@ interface ToolsProps {
 }
 
 function Tools(props: ToolsProps){
-  let tools = props.tools.map(tool => <Tool>{tool}</Tool>)
+  let tools = props.tools.map((tool, index) => <Tool key={index}>{tool}</Tool>)
   return(
     <ToolsContainer>
       {tools}
@@ -17,17 +17,15 @@ function Tools(props: ToolsProps){
 }
 
 interface ProjectProps {
-  image: any,
   isMobile?: boolean,
-  tools: string[],
   desc: Description
 }
 
 function Project(props: ProjectProps){
   return(
     <Container>
-      <Image image={props.image} isMobile={props.isMobile} desc={props.desc}/>
-      <Tools tools={props.tools}/>
+      <Image isMobile={props.isMobile} desc={props.desc}/>
+      <Tools tools={props.desc.tools}/>
     </Container>
   )
 }
