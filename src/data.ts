@@ -1,4 +1,11 @@
-const data = {
+export interface Description {
+  readonly name: string,
+  readonly body: string,
+  readonly demoLink?: string,
+  readonly githubLink: string
+}
+
+const data: {[index: string] : Description} = {
   Crows: {
     name: "The Crows",
     body: `The Crows blends in narrative-driven text games
@@ -21,7 +28,7 @@ const data = {
     demoLink: "https://bc-charity-portal.herokuapp.com",
     githubLink: "https://github.com/Vlad-Vekslyer/BC-Charity-Portal"
   },
-  DoggyDesc: {
+  Doggy: {
     name: "Go Doggy",
     body: `The app that won the VanHacks 2019 hackathon!
   Go Doggy aims to make it easier for people to volunteer

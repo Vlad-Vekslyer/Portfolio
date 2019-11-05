@@ -1,7 +1,6 @@
 import React from "react"
 import {Container, Header, Projects} from "./StyledPortfolio"
 import Project from "./Project/Project"
-import {Description} from "./Project/Image/Image"
 import * as Charity from "../assets/Charity.png"
 import * as Crows from "../assets/Crows.png"
 import * as Doggy from "../assets/Doggy.png"

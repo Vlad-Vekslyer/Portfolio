@@ -1,14 +1,8 @@
 import React from "react"
 import {Container, DescriptionContainer, Body, Title, Anchor, Anchors} from "./StyledImage"
+import {Description as DescInterface} from "../../../data";
 
-export interface Description {
-  name: string,
-  body: string,
-  demoLink?: string,
-  githubLink: string
-}
-
-function Description(props: {desc: Description}){
+function Description(props: {desc: DescInterface}){
   return(
     <DescriptionContainer>
       <Title>{props.desc.name}</Title>
@@ -21,7 +15,7 @@ function Description(props: {desc: Description}){
   )
 }
 
-function Image(props: {isMobile?: boolean, image: string, desc: Description}){
+function Image(props: {isMobile?: boolean, image: string, desc: DescInterface}){
   return(
     <Container isMobile={props.isMobile} image={props.image}>
         <Description desc={props.desc}/>
