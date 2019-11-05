@@ -1,19 +1,24 @@
 import React from 'react';
-import Landing from "./Landing/Landing"
+import Welcome from "./Landing/Landing"
+import ProjectProfile from "./ProjectProfile/ProjectProfile"
 import Portfolio from "./Portfolio/Portfolio"
-import styled from "styled-components"
-import IstokWeb from "./assets/IstokWeb.ttf"
+import {Route} from "react-router-dom"
 
-const StyledApp = styled.div`
-  
-`
+const Landing = () => {
+  return (
+    <div>
+      <Welcome />
+      <Portfolio />
+    </div>
+  )
+}
 
 const App: React.FC = () => {
   return (
-    <StyledApp className="App">
-      <Landing />
-      <Portfolio />
-    </StyledApp>
+    <div className="App">
+      <Route exact path="/" component={Landing} />
+      <Route path="/projects/:name" component={ProjectProfile}/>
+    </div>
   );
 }
 

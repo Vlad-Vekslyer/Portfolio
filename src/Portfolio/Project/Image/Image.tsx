@@ -1,5 +1,5 @@
 import React from "react"
-import {Container, DescriptionContainer, Body, Title, Link, Links} from "./StyledImage"
+import {Container, DescriptionContainer, Body, Title, Anchor, Anchors} from "./StyledImage"
 
 export interface Description {
   name: string,
@@ -13,10 +13,10 @@ function Description(props: {desc: Description}){
     <DescriptionContainer>
       <Title>{props.desc.name}</Title>
       <Body>{props.desc.body}</Body>
-      <Links>
-        {props.desc.demoLink ? <Link href={props.desc.demoLink}>Visit Site</Link>: null}
-        <Link href={props.desc.githubLink}>Github</Link>
-      </Links>
+      <Anchors>
+        {props.desc.demoLink ? <Anchor href={props.desc.demoLink}>Visit Site</Anchor>: null}
+        <Anchor href={props.desc.githubLink}>Github</Anchor>
+      </Anchors>
     </DescriptionContainer>
   )
 }

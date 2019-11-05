@@ -38,7 +38,7 @@ const Title = styled.h2`
   padding: 5px;
   margin: 0;`
 
-const Link = styled.a`
+const Anchor = styled.a`
   tranisiton: color 500ms background 500ms;
   text-decoration: none;
   margin: 0 5px;
@@ -55,7 +55,7 @@ const Link = styled.a`
   }
   `
 
-const Links = styled.div`
+const Anchors = styled.div`
   display: flex;
   width: 100%;
   justify-content: center;
@@ -63,4 +63,4 @@ const Links = styled.div`
   bottom: 10px;
 `
 
-export {Container, DescriptionContainer, Body, Title, Link, Links}
+export {Container, DescriptionContainer, Body, Title, Anchor, Anchors}

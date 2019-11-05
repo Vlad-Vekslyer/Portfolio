@@ -3,7 +3,7 @@ import Typing from "react-typing-animation"
 import {Container, Header} from "./StyledLanding"
 import Button from "./Button"
 
-function Landing(){
+function Welcome(){
   return(
     <Container>
       <Header>
@@ -18,4 +18,4 @@ function Landing(){
   )
 }
 
-export default Landing;
+export default Welcome;

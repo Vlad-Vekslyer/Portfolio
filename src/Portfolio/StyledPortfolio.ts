@@ -17,9 +17,11 @@ const Projects = styled.section`
 `
 
 const Header = styled.h1`
-  padding: 20px 0;
+  padding: 10px 0;
+  margin-bottom: 20px;
+  background: #4f6d7a
   text-align: center;
-  color: #4f6d7a`
+  color: #C0D6DF`
 
 
 export {Container, Header, Projects};
