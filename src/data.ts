@@ -1,5 +1,9 @@
 import Crows from "./assets/Crows.png"
 import Charity from "./assets/Charity.png"
+import Charity2 from "./assets/Charity2.png"
+import Charity3 from "./assets/Charity3.png"
+import Charity4 from "./assets/Charity4.png"
+import Charity5 from "./assets/Charity5.png"
 import Doggy from "./assets/Doggy.png"
 
 export interface Description {
@@ -36,7 +40,7 @@ const data: {[index: string] : Description} = {
     demoLink: "https://bc-charity-portal.herokuapp.com",
     githubLink: "https://github.com/Vlad-Vekslyer/BC-Charity-Portal",
     tools: ["HTML5", "CSS3", "JavaScript", "jQuery", "Node.js", "Express.js", "MongoDB"],
-    album: [Charity]
+    album: [Charity, Charity2, Charity3, Charity4, Charity5]
   },
   Doggy: {
     name: "Go Doggy",

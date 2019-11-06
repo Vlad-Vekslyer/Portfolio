@@ -1,19 +1,12 @@
 import React from "react"
-import data, {Description} from "../data"
 import {useParams} from "react-router-dom"
+import data, {Description} from "../data"
 import {Container, StyledProjectProfile, Header} from "./StyledProjectProfile"
+import Dashboard from "./Dashboard/Dashboard"
 
 function getData(name: string | undefined) : Description | undefined{
   if(name && data.hasOwnProperty(name)) { return data[name] }
   else { return undefined }
-}
-
-const Dashboard = () => {
-  return(
-    <div>
-
-    </div>
-  )
 }
 
 const ProjectProfile = () => {
@@ -22,13 +15,13 @@ const ProjectProfile = () => {
   return(
     <StyledProjectProfile>
         {projectData ? (
-          <div>
+          <>
             <Header>{projectData.name}</Header>
             <Container>
-              <p>{projectData.body}</p>
-              <Dashboard />
+              <p style={{marginBottom: "20px"}}>{projectData.body}</p>
+              <Dashboard desc={projectData}/>
             </Container>
-          </div>
+          </>
         ) : (
           <h1>Error: Project Not Found</h1>
         )}

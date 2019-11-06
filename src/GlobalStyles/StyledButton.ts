@@ -6,7 +6,7 @@ const WhiteStripeAnim = keyframes`
   }
 `
 
-const StyledButton = styled.svg`
+const StyledSVGButton = styled.svg`
   position: absolute;
   bottom: 20px;
 
@@ -15,12 +15,18 @@ const StyledButton = styled.svg`
   }
 `
 
+const StyledButton = styled.svg`
+  `
+
 const WhiteStripe = styled.rect`
   stroke-dasharray: 469.1;
   stroke-dashoffset: 469.1;
+  ${StyledSVGButton}:hover & {
+    animation: ${WhiteStripeAnim} 500ms linear forwards;
+  }
   ${StyledButton}:hover & {
     animation: ${WhiteStripeAnim} 500ms linear forwards;
   }
 `
 
-export {WhiteStripe, StyledButton}
+export {WhiteStripe, StyledButton, StyledSVGButton}

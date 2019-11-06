@@ -16,7 +16,6 @@ function Description(props: {desc: DescInterface}){
 }
 
 function Image(props: {isMobile?: boolean, desc: DescInterface}){
-  console.log(props.desc)
   return(
     <Container isMobile={props.isMobile} image={props.desc.album[0]}>
         <Description desc={props.desc}/>
