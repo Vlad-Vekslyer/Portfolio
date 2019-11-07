@@ -9,6 +9,7 @@ const StyledProjectProfile = styled.div`
 const Container = styled.div`
   width: 65%;
   line-height: 21px;
+  word-spacing: -2px;
   margin: 0 auto;
 `
 
@@ -20,4 +21,12 @@ const Header = styled.h1`
   color: #C0D6DF
 `
 
-export {StyledProjectProfile, Container, Header}
+const FeatureList = styled.ul`
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+  width: 50%;
+  display: inline-block;
+`
+
+export {StyledProjectProfile, Container, Header, FeatureList}

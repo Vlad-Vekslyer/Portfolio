@@ -12,7 +12,9 @@ export interface Description {
   readonly demoLink?: string,
   readonly githubLink: string,
   readonly tools: string[],
-  readonly album: any[]
+  readonly album: any[],
+  readonly features: string[],
+  readonly difficulties: string
 }
 
 const data: {[index: string] : Description} = {
@@ -27,7 +29,9 @@ const data: {[index: string] : Description} = {
     demoLink: "https://the-crows.herokuapp.com/",
     githubLink: "https://github.com/Vlad-Vekslyer/The-Crows",
     tools: ["HTML5", "CSS3", "TypeScript", "React", "Node.js", "Express.js", "MySQL"],
-    album: [Crows]
+    album: [Crows],
+    features: [""],
+    difficulties: ""
   },
   Charity: {
     name: "BC Charity Portal",
@@ -40,7 +44,12 @@ const data: {[index: string] : Description} = {
     demoLink: "https://bc-charity-portal.herokuapp.com",
     githubLink: "https://github.com/Vlad-Vekslyer/BC-Charity-Portal",
     tools: ["HTML5", "CSS3", "JavaScript", "jQuery", "Node.js", "Express.js", "MongoDB"],
-    album: [Charity, Charity2, Charity3, Charity4, Charity5]
+    album: [Charity, Charity2, Charity3, Charity4, Charity5],
+    features: ["Authentication", "Forums", "Program & NPO Profiles", "Responsive", "REST API", "Semantic Searching"],
+    difficulties: `First, there was a need to have a meaningful structure to data in order to manage organizations, programs, moderators and forum discussions.
+    Second, since the application relies heavily on the user exploring different programs,NGOs and discussions, it needed to be able to display information to the user with minimal page reloads.
+    I was commited to creating BC Charity Portal without using a frontend framework such as React. I had to find my own way to dynamically load content unto a page.
+    `
   },
   Doggy: {
     name: "Go Doggy",
@@ -50,7 +59,9 @@ const data: {[index: string] : Description} = {
   to showcase the dogs that need to be adopted.`,
     githubLink: "https://github.com/Vlad-Vekslyer/VanHack-2019",
     tools: ["React Native","JavaScript", "Node.js", "Express.js", "MongoDB"],
-    album: [Doggy]
+    album: [Doggy],
+    features: [""],
+    difficulties: ""
   }
 }
 

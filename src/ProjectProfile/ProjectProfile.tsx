@@ -1,8 +1,9 @@
 import React from "react"
 import {useParams} from "react-router-dom"
 import data, {Description} from "../data"
-import {Container, StyledProjectProfile, Header} from "./StyledProjectProfile"
+import {Container, StyledProjectProfile, Header, FeatureList} from "./StyledProjectProfile"
 import Dashboard from "./Dashboard/Dashboard"
+import TextSection from "./TextSection/TextSection"
 
 function getData(name: string | undefined) : Description | undefined{
   if(name && data.hasOwnProperty(name)) { return data[name] }
@@ -20,6 +21,17 @@ const ProjectProfile = () => {
             <Container>
               <p style={{marginBottom: "20px"}}>{projectData.body}</p>
               <Dashboard desc={projectData}/>
+              <TextSection title="Notable Features">
+                <FeatureList>
+                  {projectData.features.slice(0, Math.ceil(projectData.features.length / 2)).map(feature => <li>- {feature}</li>)}
+                </FeatureList>
+                <FeatureList>
+                  {projectData.features.slice(Math.ceil(projectData.features.length / 2)).map(feature => <li>- {feature}</li>)}
+                </FeatureList>
+              </TextSection>
+              <TextSection title="Difficulties I had">
+                <p>{projectData.difficulties}</p>
+              </TextSection>
             </Container>
           </>
         ) : (
