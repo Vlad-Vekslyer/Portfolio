@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import Background from "../../../assets/Background.jpg"
+import {Link} from "react-router-dom"
 import {Container as ProjectContainer} from "../StyledProject"
 
 const Container = styled('div')<{image: any, isMobile?: boolean}>`
@@ -38,7 +39,7 @@ const Title = styled.h2`
   padding: 5px;
   margin: 0;`
 
-const Anchor = styled.a`
+const AnchorSpan = styled.span`
   tranisiton: color 500ms background 500ms;
   text-decoration: none;
   margin: 0 5px;
@@ -46,14 +47,26 @@ const Anchor = styled.a`
   text-align: center;
   color: #C0D6DF;
   box-sizing: border-box;
-  padding: 5px;
   border: 2px solid #C0D6DF;
   border-radius: 3px;
   :hover {
     background: #C0D6DF;
     color: rgb(11, 30, 8);
   }
-  `
+`
+
+const Anchor = styled.a`
+  text-decoration: inherit;
+  color: inherit;
+  padding: 5px;
+  display: inline-block;`
+
+const StyledLink = styled(Link)`
+  text-decoration: inherit;
+  color: inherit;
+  padding: 5px;
+  display: inline-block;
+`
 
 const Anchors = styled.div`
   display: flex;
@@ -63,4 +76,4 @@ const Anchors = styled.div`
   bottom: 10px;
 `
 
-export {Container, DescriptionContainer, Body, Title, Anchor, Anchors}
+export {Container, DescriptionContainer, Body, Title, AnchorSpan, Anchors, Anchor, StyledLink}

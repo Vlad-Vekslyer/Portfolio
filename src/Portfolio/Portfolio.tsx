@@ -8,9 +8,9 @@ function Portfolio(){
     <Container>
       <Header>Web Developer Portfolio</Header>
       <Projects>
-        <Project desc={data.Crows}/>
-        <Project desc={data.Charity}/>
-        <Project desc={data.Doggy} isMobile={true}/>
+        <Project desc={data["the-crows"]}/>
+        <Project desc={data["bc-charity-portal"]}/>
+        <Project desc={data["go-doggy"]} isMobile={true}/>
       </Projects>
     </Container>
   )

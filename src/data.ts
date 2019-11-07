@@ -18,7 +18,7 @@ export interface Description {
 }
 
 const data: {[index: string] : Description} = {
-  Crows: {
+  "the-crows": {
     name: "The Crows",
     body: `The Crows blends in narrative-driven text games
   with card games to deliver a game that provides you with
@@ -33,7 +33,7 @@ const data: {[index: string] : Description} = {
     features: [""],
     difficulties: ""
   },
-  Charity: {
+  "bc-charity-portal": {
     name: "BC Charity Portal",
     body: `BC Charity Portal aims to streamline any research that
   potential donors want to do before donating to an NPO.
@@ -51,7 +51,7 @@ const data: {[index: string] : Description} = {
     I was commited to creating BC Charity Portal without using a frontend framework such as React. I had to find my own way to dynamically load content unto a page.
     `
   },
-  Doggy: {
+  "go-doggy": {
     name: "Go Doggy",
     body: `The app that won the VanHacks 2019 hackathon!
   Go Doggy aims to make it easier for people to volunteer

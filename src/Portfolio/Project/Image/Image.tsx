@@ -1,15 +1,24 @@
 import React from "react"
-import {Container, DescriptionContainer, Body, Title, Anchor, Anchors} from "./StyledImage"
+import {Container, DescriptionContainer, Body, Title, AnchorSpan, Anchors, Anchor, StyledLink} from "./StyledImage"
 import {Description as DescInterface} from "../../../data";
 
 function Description(props: {desc: DescInterface}){
+  console.log(props.desc)
   return(
     <DescriptionContainer>
       <Title>{props.desc.name}</Title>
       <Body>{props.desc.body}</Body>
       <Anchors>
-        {props.desc.demoLink ? <Anchor href={props.desc.demoLink}>Visit Site</Anchor>: null}
-        <Anchor href={props.desc.githubLink}>Github</Anchor>
+        {props.desc.demoLink ?
+          <AnchorSpan>
+            <Anchor href={props.desc.demoLink}>Visit Site</Anchor>
+          </AnchorSpan>: null}
+        <AnchorSpan>
+          <Anchor href={props.desc.githubLink}>Github</Anchor>
+        </AnchorSpan>
+        <AnchorSpan>
+          <StyledLink to={`/projects/${props.desc.name.toLowerCase().replace(' ', '-')}`}>Learn More</StyledLink>
+        </AnchorSpan>
       </Anchors>
     </DescriptionContainer>
   )
