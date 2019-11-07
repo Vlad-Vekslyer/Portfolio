@@ -6,15 +6,25 @@ import {WhiteStripe, StyledButton} from "../../GlobalStyles/StyledButton"
 
 const Anchor = (props: {url: string, body : string}) => {
   let rect: React.MutableRefObject<SVGRectElement | undefined> = useRef();
+  // setState will be used to force the component to re-render
   const [, setState] = useState();
-  useEffect(() => window.onresize = () => setState({}), []);
+  // we want to re-render the component each time the window is resized since the button width changes
+  useEffect(() => {
+    let timeoutId = -1;
+    window.addEventListener('resize',() => {
+      // only re-render if after 250ms have passed since the last resizing event
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => setState({}), 250);
+    })
+  }, []);
   useEffect(() => {
     if(rect.current) {
-      let length = (rect.current.width.baseVal.value + rect.current.height.baseVal.value) * 2;
+      // for WhiteStripe's animation to work, we need to re-compute its strokeDasharray/offset on each render
+      let length = (rect.current.width.animVal.value + rect.current.height.animVal.value) * 2;
       rect.current.style.strokeDasharray = length.toString();
       rect.current.style.strokeDashoffset = length.toString();
     }
-  })
+  });
   return (
     <>
       <StyledAnchor href={props.url}>
