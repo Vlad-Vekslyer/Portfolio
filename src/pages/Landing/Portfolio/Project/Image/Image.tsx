@@ -1,6 +1,6 @@
 import React from "react"
 import {Container, DescriptionContainer, Body, Title, AnchorSpan, Anchors, Anchor, StyledLink} from "./StyledImage"
-import {Description as DescInterface} from "../../../data";
+import {Description as DescInterface} from "../../../../../data";
 
 function Description(props: {desc: DescInterface}){
   console.log(props.desc)
@@ -17,7 +17,7 @@ function Description(props: {desc: DescInterface}){
           <Anchor href={props.desc.githubLink}>Github</Anchor>
         </AnchorSpan>
         <AnchorSpan>
-          <StyledLink to={`/projects/${props.desc.name.toLowerCase().replace(' ', '-')}`}>Learn More</StyledLink>
+          <StyledLink to={`/projects/${props.desc.name.toLowerCase().replace(/ /g, '-')}`}>Learn More</StyledLink>
         </AnchorSpan>
       </Anchors>
     </DescriptionContainer>

@@ -1,8 +1,8 @@
 import React, {useRef, useState, useEffect} from "react"
 import Slider from  "react-slick";
-import {Description} from "../../data"
+import {Description} from "../../../data"
 import {ToolsContainer, SlidesContainer, Slide, Container, StyledAnchor} from "./StyledDashboard"
-import {WhiteStripe, StyledButton} from "../../global/styles/StyledButton"
+import {WhiteStripe, StyledButton} from "../../../global/styles/StyledButton"
 
 const Anchor = (props: {url: string, body : string}) => {
   let rect: React.MutableRefObject<SVGRectElement | undefined> = useRef();

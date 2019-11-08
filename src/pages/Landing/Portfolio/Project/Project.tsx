@@ -1,7 +1,7 @@
 import React from "react"
 import {Container, ToolsContainer, Tool} from "./StyledProject"
 import Image from "./Image/Image"
-import {Description} from "../../data"
+import {Description} from "../../../../data"
 
 interface ToolsProps {
   tools: string[]

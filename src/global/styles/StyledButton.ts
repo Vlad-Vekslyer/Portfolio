@@ -9,7 +9,6 @@ const WhiteStripeAnim = keyframes`
 const StyledSVGButton = styled.svg`
   position: absolute;
   bottom: 20px;
-
   :hover {
     cursor: pointer;
   }

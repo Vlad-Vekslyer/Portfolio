@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import Background from "../../../assets/Background.jpg"
+import Background from "../../../../../assets/Background.jpg"
 import {Link} from "react-router-dom"
 import {Container as ProjectContainer} from "../StyledProject"
 

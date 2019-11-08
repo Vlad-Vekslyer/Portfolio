@@ -1,7 +1,7 @@
 import React from "react"
 import {Container, Header, Projects} from "./StyledPortfolio"
 import Project from "./Project/Project"
-import data from "../data"
+import data from "../../../data"
 
 function Portfolio(){
   return(

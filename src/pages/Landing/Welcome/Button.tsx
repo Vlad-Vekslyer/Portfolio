@@ -1,5 +1,5 @@
 import React, {useRef} from "react"
-import {StyledSVGButton, WhiteStripe} from "../global/styles/StyledButton"
+import {StyledSVGButton, WhiteStripe} from "../../../global/styles/StyledButton"
 
 function Button(){
   const buttonText: React.MutableRefObject<SVGSVGElement | undefined> = useRef();
