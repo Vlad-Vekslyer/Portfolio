@@ -3,7 +3,6 @@ import {Container, DescriptionContainer, Body, Title, AnchorSpan, Anchors, Ancho
 import {Description as DescInterface} from "../../../../../data";
 
 function Description(props: {desc: DescInterface}){
-  console.log(props.desc)
   return(
     <DescriptionContainer>
       <Title>{props.desc.name}</Title>

@@ -4,6 +4,9 @@ import {Description} from "../../../data"
 import {ToolsContainer, SlidesContainer, Slide, Container, StyledAnchor} from "./StyledDashboard"
 import {WhiteStripe, StyledButton} from "../../../global/styles/StyledButton"
 
+/* the logic running in this component is nessecary to make sure
+the strokeDasharray/offset of WhiteStripe is correct on a resize
+please read all the comments below and refactor with care*/
 const Anchor = (props: {url: string, body : string}) => {
   let rect: React.MutableRefObject<SVGRectElement | undefined> = useRef();
   // setState will be used to force the component to re-render
@@ -12,7 +15,7 @@ const Anchor = (props: {url: string, body : string}) => {
   useEffect(() => {
     let timeoutId = -1;
     window.addEventListener('resize',() => {
-      // only re-render if after 250ms have passed since the last resizing event
+      // only re-render after 250ms have passed since the last resizing event
       clearTimeout(timeoutId);
       timeoutId = setTimeout(() => setState({}), 250);
     })

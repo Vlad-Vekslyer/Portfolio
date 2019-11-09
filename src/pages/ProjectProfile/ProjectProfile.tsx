@@ -26,10 +26,10 @@ const ProjectProfile = () => {
               <Dashboard desc={projectData}/>
               <TextSection title="Notable Features">
                 <FeatureList>
-                  {projectData.features.slice(0, Math.ceil(projectData.features.length / 2)).map(feature => <li>- {feature}</li>)}
+                  {projectData.features.slice(0, Math.ceil(projectData.features.length / 2)).map((feature,index) => <li key={index}>- {feature}</li>)}
                 </FeatureList>
                 <FeatureList>
-                  {projectData.features.slice(Math.ceil(projectData.features.length / 2)).map(feature => <li>- {feature}</li>)}
+                  {projectData.features.slice(Math.ceil(projectData.features.length / 2)).map((feature,index) => <li key={index}>- {feature}</li>)}
                 </FeatureList>
               </TextSection>
               <TextSection title="Difficulties I had">

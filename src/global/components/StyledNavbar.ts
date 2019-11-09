@@ -2,21 +2,23 @@ import styled, {keyframes} from "styled-components"
 import {Link} from "react-router-dom"
 
 const NavList = styled.ul`
+  transition: color 500ms;
   display: flex;
+  z-index: 1;
   list-style: none;
   padding: 0;
-  font-size: 20px;
+  font-size: 18px;
   position: fixed;
   right: 4%;
   top: 20px;
-  color: #8c8c8c;
+  color: ${props => props.theme.color};
 `
 
 const NavItem = styled.li`
   margin-right: 15px;
   color: inherit;
   :hover {
-    color: grey;
+    color: ${props => props.theme.hoverColor};
     cursor: pointer;
   }
 `
