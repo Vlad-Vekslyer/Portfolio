@@ -33,7 +33,10 @@ const ProjectProfile = () => {
                 </FeatureList>
               </TextSection>
               <TextSection title="Difficulties I had">
-                <p>{projectData.difficulties}</p>
+                {projectData.difficulties.map((paragraph, index) => <p key={index}>{paragraph}</p>)}
+              </TextSection>
+              <TextSection title="How I solved them">
+                {projectData.solutions.map((paragraph, index) => <p key={index}>{paragraph}</p>)}
               </TextSection>
             </Container>
           </>

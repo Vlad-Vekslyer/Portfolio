@@ -30,6 +30,11 @@ const hoverAnim = keyframes`
     width: 100%;
   }`
 
+const Anchor = styled.a`
+  text-decoration: none;
+  color: inherit;
+`
+
 const StyledLink = styled(Link)`
   text-decoration: none;
   color: inherit;
@@ -43,4 +48,4 @@ const Underline = styled.hr`
     animation: ${hoverAnim} 300ms linear forwards;
   }`
 
-export {NavList, NavItem, Underline, StyledLink}
+export {NavList, NavItem, Underline, StyledLink, Anchor}

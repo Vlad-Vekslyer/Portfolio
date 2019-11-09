@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react"
 import {ThemeProvider} from "styled-components"
-import {NavList, NavItem, Underline, StyledLink} from "./StyledNavbar"
+import {NavList, NavItem, Underline, StyledLink, Anchor} from "./StyledNavbar"
+import Resume from "../../assets/Resume.pdf"
 
 interface linkTheme {
   color: string,
@@ -49,7 +50,7 @@ function getDarkZone(path: darkZones): number[]{
 }
 
 const Navbar = () => {
-  const [theme, setTheme] = useState(lightTheme);
+  const [theme, setTheme] = useState(darkTheme);
   useEffect(() => {
     let darkZone = getPath(getDarkZone);
     window.addEventListener('scroll', () => {
@@ -66,7 +67,7 @@ const Navbar = () => {
           <Underline/>
         </NavItem>
         <NavItem>
-          Resume
+          <Anchor href={Resume} target="_blank">Resume</Anchor>
           <Underline/>
         </NavItem>
       </NavList>
