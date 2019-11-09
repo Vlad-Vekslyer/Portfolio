@@ -20,28 +20,30 @@ const lightTheme: linkTheme = {
 
 interface darkZones { [index: number]: number[] }
 
-const darkZones: { [index: string]: darkZones } = {
-  "/": {
-    500: [718, 800]
-  },
-  "/projects/project-name": {
-    500: [0, 47],
-    100: [0, 20]
+function supplyDarkZones(){
+  return {
+    "/": {
+      500: [window.innerHeight - 40, window.innerHeight + 50]
+    },
+    "/projects/project-name": {
+      500: [0, 47],
+      100: [0, 20]
+    }
   }
 }
 
 function getPath(cb: (path: darkZones) => number[]): number[]{
   let path = window.location.pathname;
-  if(path === "/") { return cb(darkZones["/"]) }
+  if(path === "/") { return cb(supplyDarkZones()["/"]) }
   let pathRegex = /\/projects\/a*/;
-  if (pathRegex.test(path)) { return cb(darkZones["/projects/project-name"]) }
+  if (pathRegex.test(path)) { return cb(supplyDarkZones()["/projects/project-name"]) }
   else {
     throw "Invalid Path"
   }
 }
 
 function getDarkZone(path: darkZones): number[]{
-  let sizes = Object.getOwnPropertyNames(path)
+  let sizes = Object.getOwnPropertyNames(path);
   for(let i = sizes.length - 1; i > -1; i --){
     let size = parseInt(sizes[i])
     if(window.innerWidth >= size) { return path[size] }
@@ -52,12 +54,16 @@ function getDarkZone(path: darkZones): number[]{
 const Navbar = () => {
   const [theme, setTheme] = useState(darkTheme);
   useEffect(() => {
-    let darkZone = getPath(getDarkZone);
+    let timeoutId = -1;
     window.addEventListener('scroll', () => {
-      let position = window.scrollY;
-      if(position >= darkZone[0] && position <= darkZone[1]) setTheme(lightTheme);
-      else setTheme(darkTheme);
-    })
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => {
+        let darkZone = getPath(getDarkZone);
+        let position = window.scrollY;
+        if(position >= darkZone[0] && position <= darkZone[1]) setTheme(lightTheme);
+        else setTheme(darkTheme);
+      }, 20);
+    });
   }, []);
   return (
     <ThemeProvider theme={theme}>

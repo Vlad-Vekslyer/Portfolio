@@ -8,7 +8,7 @@ import {Route} from "react-router-dom"
 const Landing = () => {
   return (
     <>
-      <Navbar />
+      <Navbar/>
       <Welcome />
       <Portfolio />
     </>

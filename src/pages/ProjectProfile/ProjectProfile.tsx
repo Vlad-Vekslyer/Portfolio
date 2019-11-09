@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useEffect} from "react"
 import {useParams} from "react-router-dom"
 import data, {Description} from "../../data"
 import {Container, StyledProjectProfile, Header, FeatureList} from "./StyledProjectProfile"
@@ -12,11 +12,15 @@ function getData(name: string | undefined) : Description | undefined{
 }
 
 const ProjectProfile = () => {
+  let height = 0;
+  useEffect(() => {
+    height = document.body.clientHeight;
+  });
   let {name} = useParams();
   let projectData = getData(name);
   return(
     <>
-    <Navbar />
+    <Navbar/>
       <StyledProjectProfile>
         {projectData ? (
           <>

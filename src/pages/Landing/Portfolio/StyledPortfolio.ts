@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import breakpoints from "../../../global/styles/breakpoins"
 
 const Container = styled.div`
   width: 100%;
@@ -14,6 +15,9 @@ const Projects = styled.section`
   grid-template-rows: 1fr 1fr;
   margin: 0 auto;
   width: 65%;
+  @media (max-width: ${breakpoints.large}){
+    width: 80%;
+  }
 `
 
 const Header = styled.h1`

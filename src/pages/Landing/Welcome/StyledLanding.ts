@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import breakpoints from "../../../global/styles/breakpoins"
 
 const Container = styled.div`
   background: linear-gradient(180deg, #C0D6DF 0%, #EAEAEA 100%);
