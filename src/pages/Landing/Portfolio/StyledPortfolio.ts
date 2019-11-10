@@ -21,11 +21,16 @@ const Projects = styled.section`
   @media (max-width: ${breakpoints.medium}){
     width: 95%;
   }
-
   @media (max-width: ${breakpoints.small}){
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     width: 65%;
+  }
+  @media (max-width: ${breakpoints.extraSmall}){
+    width: 85%;
+  }
+  @media (max-width: ${breakpoints.miniscule}){
+    width: 95%;
   }
 `
 

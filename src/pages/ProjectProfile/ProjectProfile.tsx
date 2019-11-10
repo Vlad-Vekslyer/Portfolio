@@ -1,10 +1,11 @@
 import React, {useCallback} from "react"
 import {useParams} from "react-router-dom"
 import data, {Description} from "../../data"
-import {Container, StyledProjectProfile, Header, FeatureList} from "./StyledProjectProfile"
+import {Container, StyledProjectProfile, FeatureList, TopDesc} from "./StyledProjectProfile"
 import Dashboard from "./Dashboard/Dashboard"
 import TextSection from "./TextSection/TextSection"
 import Navbar from "../../global/components/Navbar"
+import Header from "../../global/styles/Header"
 
 function getData(name: string | undefined) : Description | undefined{
   if(name && data.hasOwnProperty(name)) { return data[name] }
@@ -34,7 +35,7 @@ const ProjectProfile = () => {
           <>
             <Header>{projectData.name}</Header>
             <Container>
-              <p style={{marginBottom: "20px"}}>{projectData.body}</p>
+              <TopDesc style={{marginBottom: "20px"}}>{projectData.body}</TopDesc>
               <Dashboard isMobile={mobile} desc={projectData}/>
               <TextSection title="Notable Features">
                 <FeatureList>

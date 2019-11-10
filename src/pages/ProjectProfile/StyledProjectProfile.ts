@@ -1,9 +1,13 @@
 import styled from "styled-components"
+import breakpoints from "../../global/styles/breakpoins"
 
 const StyledProjectProfile = styled.div`
   background: linear-gradient(180deg, #C0D6DF 0%, #EAEAEA 100%);
   color: #4f6d7a;
-  font-size: 20px;
+  font-size: 19px;
+  @media (max-width: ${breakpoints.medium}){
+    font-size: 18px;
+  }
 `
 
 const Container = styled.div`
@@ -11,14 +15,12 @@ const Container = styled.div`
   line-height: 21px;
   word-spacing: -2px;
   margin: 0 auto;
-`
-
-const Header = styled.h1`
-  padding: 10px 0;
-  margin-bottom: 20px;
-  background: #4f6d7a;
-  text-align: center;
-  color: #C0D6DF
+  @media (max-width: ${breakpoints.large}){
+    width: 80%;
+  }
+  @media (max-width: ${breakpoints.medium}){
+    width: 90%;
+  }
 `
 
 const FeatureList = styled.ul`
@@ -29,4 +31,10 @@ const FeatureList = styled.ul`
   display: inline-block;
 `
 
-export {StyledProjectProfile, Container, Header, FeatureList}
+const TopDesc = styled.p`
+  @media (max-width: ${breakpoints.small}){
+    display: none;
+  }
+`
+
+export {StyledProjectProfile, Container, FeatureList, TopDesc}

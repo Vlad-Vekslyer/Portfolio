@@ -25,7 +25,8 @@ interface darkZones { [index: number]: number[] }
 function supplyDarkZones(){
   return {
     "/": {
-      500: [window.innerHeight - 40, window.innerHeight + 50]
+      896: [window.innerHeight - 40, window.innerHeight + 50],
+      320: [window.innerHeight - 35, window.innerHeight + 30]
     },
     "/projects/project-name": {
       500: [0, 47],

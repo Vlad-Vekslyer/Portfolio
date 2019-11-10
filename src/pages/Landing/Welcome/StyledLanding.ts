@@ -25,6 +25,16 @@ const Header = styled.header`
   }
   @media (max-width: ${breakpoints.small}) {
     font-size: 1.3em;
+    height: 170px;
+  }
+  @media (max-width: ${breakpoints.extraSmall}) {
+    font-size: 1em;
+    height: 145px;
+  }
+
+  @media (max-width: ${breakpoints.miniscule}) {
+    font-size: 0.8em;
+    height: 120px;
   }
 `
 

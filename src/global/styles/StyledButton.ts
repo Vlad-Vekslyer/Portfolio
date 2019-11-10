@@ -16,12 +16,16 @@ const StyledSVGButton = styled.svg`
   @media (max-width:${breakpoints.medium}){
     width: 160px;
     height: 60px;
-    bottom: 50px;
+    bottom: 55px;
   }
   @media (max-width:${breakpoints.small}){
     width: 140px;
     height: 50px;
-    bottom: 80px;
+    bottom: 5px;
+  }
+  @media (max-width: ${breakpoints.miniscule}){
+    width: 100px;
+    height: 40px;
   }
 `
 

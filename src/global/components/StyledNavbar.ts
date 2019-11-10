@@ -1,5 +1,6 @@
 import styled, {keyframes} from "styled-components"
 import {Link} from "react-router-dom"
+import breakpoints from "../styles/breakpoins"
 
 const NavList = styled.ul`
   transition: color 500ms;
@@ -10,8 +11,11 @@ const NavList = styled.ul`
   font-size: 18px;
   position: fixed;
   right: 4%;
-  top: 20px;
+  top: 15px;
   color: ${props => props.theme.color};
+  @media (max-width: ${breakpoints.medium}) {
+    right: 0;
+  }
 `
 
 const NavItem = styled.li`
@@ -28,7 +32,8 @@ const hoverAnim = keyframes`
     width: 0;
   } to {
     width: 100%;
-  }`
+  }
+`
 
 const Anchor = styled.a`
   text-decoration: none;
@@ -46,6 +51,7 @@ const Underline = styled.hr`
   ${NavItem}:hover &{
     display: block;
     animation: ${hoverAnim} 300ms linear forwards;
-  }`
+  }
+`
 
 export {NavList, NavItem, Underline, StyledLink, Anchor}

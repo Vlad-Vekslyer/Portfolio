@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import Background from "../../../assets/Background.jpg"
+import breakpoints from "../../../global/styles/breakpoins"
 
 const Container = styled.div`
   display: grid;
@@ -7,6 +8,12 @@ const Container = styled.div`
   grid-template-rows: 25% 50% 25%;
   grid-row-gap: 25px;
   height: 375px;
+  @media (max-width: ${breakpoints.small}){
+    display: flex;
+    flex-direction: column;
+    grid-row-gap: 0;
+    margin-bottom: 35px;
+  }
 `
 
 const Slide = styled('div')<{image: any, isMobile: boolean}>`
@@ -15,6 +22,9 @@ const Slide = styled('div')<{image: any, isMobile: boolean}>`
   background-size: ${props => props.isMobile ? "contain, cover" : "cover"};
   background-repeat: no-repeat;
   background-position: ${props => props.isMobile ? "center" : "initial"};
+  @media (max-width: ${breakpoints.small}){
+    height: 375px;
+  }
 `
 
 const SlidesContainer = styled.div`
@@ -26,6 +36,9 @@ const SlidesContainer = styled.div`
 const ToolsContainer = styled.div`
   grid-row-start: 2;
   grid-row-end: 4;
+  @media (max-width: ${breakpoints.small}){
+    display: none;
+  }
 `
 
 const StyledAnchor = styled.a`
@@ -42,6 +55,9 @@ const StyledAnchor = styled.a`
   text-align: center;
   font-weight: bold;
   color: #FFFFFF;
+  @media (max-width: ${breakpoints.small}){
+    display: none;
+  }
 `
 
 export {Slide, SlidesContainer, ToolsContainer, Container, StyledAnchor}
