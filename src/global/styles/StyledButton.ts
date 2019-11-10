@@ -1,4 +1,5 @@
 import styled, {keyframes} from "styled-components"
+import breakpoints from "./breakpoins"
 
 const WhiteStripeAnim = keyframes`
   to {
@@ -11,6 +12,16 @@ const StyledSVGButton = styled.svg`
   bottom: 20px;
   :hover {
     cursor: pointer;
+  }
+  @media (max-width:${breakpoints.medium}){
+    width: 160px;
+    height: 60px;
+    bottom: 50px;
+  }
+  @media (max-width:${breakpoints.small}){
+    width: 140px;
+    height: 50px;
+    bottom: 80px;
   }
 `
 

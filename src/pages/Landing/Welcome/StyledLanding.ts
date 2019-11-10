@@ -20,6 +20,12 @@ const Header = styled.header`
   text-align: center;
   align-items: center;
   flex-direction: column;
+  @media (max-width: ${breakpoints.medium}) {
+    font-size: 1.5em;
+  }
+  @media (max-width: ${breakpoints.small}) {
+    font-size: 1.3em;
+  }
 `
 
 

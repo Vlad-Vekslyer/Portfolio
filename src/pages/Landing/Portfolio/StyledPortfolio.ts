@@ -18,6 +18,15 @@ const Projects = styled.section`
   @media (max-width: ${breakpoints.large}){
     width: 80%;
   }
+  @media (max-width: ${breakpoints.medium}){
+    width: 95%;
+  }
+
+  @media (max-width: ${breakpoints.small}){
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    width: 65%;
+  }
 `
 
 const Header = styled.h1`
@@ -25,7 +34,14 @@ const Header = styled.h1`
   margin-bottom: 20px;
   background: #4f6d7a
   text-align: center;
-  color: #C0D6DF`
+  color: #C0D6DF;
+  @media (max-width: ${breakpoints.large}){
+    font-size: 1.35em;
+  }
+  @media (max-width: ${breakpoints.medium}){
+    font-size: 1.1em;
+  }
+`
 
 
 export {Container, Header, Projects};

@@ -20,6 +20,8 @@ const lightTheme: linkTheme = {
 
 interface darkZones { [index: number]: number[] }
 
+
+// returns the areas where the background is dark
 function supplyDarkZones(){
   return {
     "/": {
@@ -32,6 +34,7 @@ function supplyDarkZones(){
   }
 }
 
+// get the an array of dark background coordinates of the current view
 function getPath(cb: (path: darkZones) => number[]): number[]{
   let path = window.location.pathname;
   if(path === "/") { return cb(supplyDarkZones()["/"]) }
@@ -42,6 +45,7 @@ function getPath(cb: (path: darkZones) => number[]): number[]{
   }
 }
 
+// get the dark background coordinates depending on the screen size
 function getDarkZone(path: darkZones): number[]{
   let sizes = Object.getOwnPropertyNames(path);
   for(let i = sizes.length - 1; i > -1; i --){

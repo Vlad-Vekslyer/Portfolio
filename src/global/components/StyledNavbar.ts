@@ -4,7 +4,7 @@ import {Link} from "react-router-dom"
 const NavList = styled.ul`
   transition: color 500ms;
   display: flex;
-  z-index: 1;
+  z-index: 2;
   list-style: none;
   padding: 0;
   font-size: 18px;
