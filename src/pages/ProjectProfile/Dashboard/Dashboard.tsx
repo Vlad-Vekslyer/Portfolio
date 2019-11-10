@@ -40,8 +40,8 @@ const Anchor = (props: {url: string, body : string}) => {
   )
 }
 
-const Dashboard = (props: {desc: Description}) => {
-  let slides = props.desc.album.map((image, index) => <Slide key={index} image={image}/>)
+const Dashboard = (props: {desc: Description, isMobile: boolean}) => {
+  let slides = props.desc.album.map((image, index) => <Slide isMobile={props.isMobile} key={index} image={image}/>)
   let tools = props.desc.tools.map((tool, index) => (<p key={index}>- {tool}</p>))
   return(
     <Container>

@@ -1,4 +1,4 @@
-import React, {useEffect} from "react"
+import React, {useCallback} from "react"
 import {useParams} from "react-router-dom"
 import data, {Description} from "../../data"
 import {Container, StyledProjectProfile, Header, FeatureList} from "./StyledProjectProfile"
@@ -11,23 +11,31 @@ function getData(name: string | undefined) : Description | undefined{
   else { return undefined }
 }
 
+function isMobile(): boolean{
+  let searchParams = new URLSearchParams(window.location.search);
+  let isMobile = searchParams.get("mobile");
+  return !!isMobile;
+}
+
 const ProjectProfile = () => {
-  let height = 0;
-  useEffect(() => {
-    height = document.body.clientHeight;
-  });
+  let mobile = isMobile();
+  const scrollUp = useCallback(element => {
+    if(element !== null){
+      window.scrollTo(0,0)
+    }
+  }, [])
   let {name} = useParams();
   let projectData = getData(name);
   return(
     <>
     <Navbar/>
-      <StyledProjectProfile>
+      <StyledProjectProfile ref={scrollUp}>
         {projectData ? (
           <>
             <Header>{projectData.name}</Header>
             <Container>
               <p style={{marginBottom: "20px"}}>{projectData.body}</p>
-              <Dashboard desc={projectData}/>
+              <Dashboard isMobile={mobile} desc={projectData}/>
               <TextSection title="Notable Features">
                 <FeatureList>
                   {projectData.features.slice(0, Math.ceil(projectData.features.length / 2)).map((feature,index) => <li key={index}>- {feature}</li>)}

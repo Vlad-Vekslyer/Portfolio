@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import Background from "../../../assets/Background.jpg"
 
 const Container = styled.div`
   display: grid;
@@ -8,10 +9,12 @@ const Container = styled.div`
   height: 375px;
 `
 
-const Slide = styled('div')<{image: any}>`
+const Slide = styled('div')<{image: any, isMobile: boolean}>`
   height: 350px;
-  background: url(${props => props.image});
-  background-size: cover;
+  background: url(${props => props.image}) ,url(${props => props.isMobile ? Background : "none"});
+  background-size: ${props => props.isMobile ? "contain, cover" : "cover"};
+  background-repeat: no-repeat;
+  background-position: ${props => props.isMobile ? "center" : "initial"};
 `
 
 const SlidesContainer = styled.div`

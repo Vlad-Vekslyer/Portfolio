@@ -14,7 +14,7 @@ const Container = styled('div')<{image: any, isMobile?: boolean}>`
   z-index: 1;
 `
 
-const DescriptionContainer = styled.div`
+const DescriptionContainer = styled('div')<{parentClicked?: boolean}>`
   transition: opacity 500ms;
   font-size: 14px;
   position: absolute;
@@ -23,7 +23,7 @@ const DescriptionContainer = styled.div`
   height: 100%;
   width: 100%;
   display: inline-block;
-  opacity: 0;
+  opacity: ${props => props.parentClicked ? "0.92" : "0"};
   background: rgb(51, 66, 79);
   ${ProjectContainer}: hover & {
     opacity: 0.92;

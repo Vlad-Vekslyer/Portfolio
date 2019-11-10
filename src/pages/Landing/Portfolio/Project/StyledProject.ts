@@ -5,15 +5,15 @@ const Container = styled.div`
   grid-template-rows: 3fr 1fr;
 `
 
-const ToolsContainer = styled.div`
+const ToolsContainer = styled('div')<{parentClicked?: boolean}>`
   display: flex;
   height: 85px;
   flex-wrap: wrap;
   transition: bottom 500ms;
   background-color: rgba(11, 30, 8, 0.05);
   position: relative;
-  bottom: 100px;
-  z-index: -1;
+  bottom: ${props => props.parentClicked ? "0" : "100px"};
+  z-index: ${props => props.parentClicked ? "0" : "-1"};
   ${Container}:hover &{
     bottom: 0;
     z-index: 0;

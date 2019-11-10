@@ -41,7 +41,7 @@ function getPath(cb: (path: darkZones) => number[]): number[]{
   let pathRegex = /\/projects\/a*/;
   if (pathRegex.test(path)) { return cb(supplyDarkZones()["/projects/project-name"]) }
   else {
-    throw "Invalid Path"
+    throw new Error("Invalid Path");
   }
 }
 
@@ -52,7 +52,7 @@ function getDarkZone(path: darkZones): number[]{
     let size = parseInt(sizes[i])
     if(window.innerWidth >= size) { return path[size] }
   }
-  throw "Invalid Path"
+  throw new Error("Invalid Path");
 }
 
 const Navbar = () => {
@@ -66,7 +66,7 @@ const Navbar = () => {
         let position = window.scrollY;
         if(position >= darkZone[0] && position <= darkZone[1]) setTheme(lightTheme);
         else setTheme(darkTheme);
-      }, 20);
+      }, 100);
     });
   }, []);
   return (
