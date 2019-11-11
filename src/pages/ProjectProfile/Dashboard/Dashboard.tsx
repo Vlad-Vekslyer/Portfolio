@@ -1,4 +1,4 @@
-import React, {useRef, useState, useEffect} from "react"
+import React, {useState, useEffect} from "react"
 import Slider from  "react-slick";
 import {Description} from "../../../data"
 import {ToolsContainer, SlidesContainer, Slide, Container, StyledAnchor, AnchorsContainer} from "./StyledDashboard"

@@ -8,6 +8,10 @@ const StyledProjectProfile = styled.div`
   @media (max-width: ${breakpoints.medium}){
     font-size: 18px;
   }
+
+  @media (max-width: ${breakpoints.miniscule}){
+    font-size: 16px;
+  }
 `
 
 const Container = styled.div`
@@ -29,6 +33,9 @@ const FeatureList = styled.ul`
   box-sizing: border-box;
   width: 50%;
   display: inline-block;
+  @media (max-width: ${breakpoints.miniscule}){
+    width: 100%;
+  }
 `
 
 const TopDesc = styled.p`

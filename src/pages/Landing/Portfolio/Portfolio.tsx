@@ -7,7 +7,7 @@ import Header from "../../../global/styles/Header"
 function Portfolio(){
   return(
     <Container>
-      <Header>Web Developer Portfolio</Header>
+      <Header>Portfolio</Header>
       <Projects>
         <Project desc={data["the-crows"]}/>
         <Project desc={data["bc-charity-portal"]}/>
