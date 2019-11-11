@@ -10,9 +10,9 @@ const Container = styled.div`
   height: 375px;
   @media (max-width: ${breakpoints.small}){
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     grid-row-gap: 0;
-    margin-bottom: 35px;
+    height: 100%;
   }
 `
 
@@ -22,15 +22,12 @@ const Slide = styled('div')<{image: any, isMobile: boolean}>`
   background-size: ${props => props.isMobile ? "contain, cover" : "cover"};
   background-repeat: no-repeat;
   background-position: ${props => props.isMobile ? "center" : "initial"};
-  @media (max-width: ${breakpoints.small}){
-    height: 375px;
-  }
 `
 
 const SlidesContainer = styled.div`
   grid-column-start: 2;
   height: 100%;
-  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.25)
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.25);
 `
 
 const ToolsContainer = styled.div`
@@ -41,7 +38,7 @@ const ToolsContainer = styled.div`
   }
 `
 
-const StyledAnchor = styled.a`
+const StyledAnchor = styled('a')<{isMobile?: boolean}>`
   position: relative;
   height: 46px;
   padding: 10px 10px;
@@ -56,8 +53,17 @@ const StyledAnchor = styled.a`
   font-weight: bold;
   color: #FFFFFF;
   @media (max-width: ${breakpoints.small}){
-    display: none;
+    width: ${props => props.isMobile ? "100%" : "50%"};
   }
 `
 
-export {Slide, SlidesContainer, ToolsContainer, Container, StyledAnchor}
+const AnchorsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  @media (max-width: ${breakpoints.small}) {
+    flex-direction: row;
+    margin-top: 15px;
+  }
+`
+
+export {Slide, SlidesContainer, ToolsContainer, Container, StyledAnchor, AnchorsContainer}

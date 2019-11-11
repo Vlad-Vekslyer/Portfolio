@@ -41,6 +41,9 @@ const WhiteStripe = styled.rect`
   ${StyledButton}:hover & {
     animation: ${WhiteStripeAnim} 500ms linear forwards;
   }
+  @media (max-width: ${breakpoints.small}){
+    display:none;
+  }
 `
 
 export {WhiteStripe, StyledButton, StyledSVGButton}
