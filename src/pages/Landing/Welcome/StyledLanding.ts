@@ -38,5 +38,12 @@ const Header = styled.header`
   }
 `
 
+const SidePanel = styled.aside`
+  display:flex;
+  flex-direction:column;
+  position: absolute;
+  float:left;
+  margin-top: 65vh;
+`
 
-export {Container, Header}
+export {Container, Header, SidePanel}

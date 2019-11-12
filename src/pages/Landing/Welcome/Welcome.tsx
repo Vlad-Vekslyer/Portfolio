@@ -1,7 +1,11 @@
 import React, {useCallback} from "react"
 import Typing from "react-typing-animation"
-import {Container, Header} from "./StyledLanding"
+import {Container, Header, SidePanel} from "./StyledLanding"
 import Button from "./Button"
+import SideItem from "./SideItem"
+import github from "../../../assets/github.png"
+import email from "../../../assets/email.png"
+import linkedin from "../../../assets/linkedin.png"
 
 function Welcome(){
   const scrollUp = useCallback(element => {
@@ -10,16 +14,23 @@ function Welcome(){
     }
   }, [])
   return(
-    <Container ref={scrollUp}>
-      <Header>
-        <Typing speed={10}>
-          <h1 style={{lineHeight: "1em"}}>VLADYSLAV VEKSLYER</h1>
-          <h2 style={{lineHeight: "1em"}}>Highly motivated • Team-oriented</h2>
-          <h2 style={{lineHeight: "1em"}}>Full-stack developer</h2>
-        </Typing>
-        <Button />
-      </Header>
-    </Container>
+    <>
+      <SidePanel>
+        <SideItem link="https://github.com/Vlad-Vekslyer" image={github}/>
+        <SideItem message="vladatcanada@gmail.com" image={email}/>
+        <SideItem link="https://www.linkedin.com/in/vladyslav-vekslyer-880b72190/" image={linkedin}/>
+      </SidePanel>
+      <Container ref={scrollUp}>
+        <Header>
+          <Typing speed={10}>
+            <h1 style={{lineHeight: "1em"}}>VLADYSLAV VEKSLYER</h1>
+            <h2 style={{lineHeight: "1em"}}>Highly motivated • Team-oriented</h2>
+            <h2 style={{lineHeight: "1em"}}>Full-stack developer</h2>
+          </Typing>
+          <Button />
+        </Header>
+      </Container>
+    </>
   )
 }
 

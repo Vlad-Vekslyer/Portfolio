@@ -1,21 +1,24 @@
 import React, {useEffect, useState} from "react"
 import {ThemeProvider} from "styled-components"
-import {NavList, NavItem, Underline, StyledLink, Anchor} from "./StyledNavbar"
+import {NavList, NavItem, Underline, StyledLink, Anchor, Hamburger, HamLine} from "./StyledNavbar"
 import Resume from "../../assets/Resume.pdf"
 
 interface linkTheme {
   color: string,
-  hoverColor: string
+  hoverColor: string,
+  dropColor: string
 }
 
 const darkTheme: linkTheme = {
   color: "#4f6d7a",
-  hoverColor: "#2d3b47"
+  hoverColor: "#2d3b47",
+  dropColor: "#C0D6DF"
 }
 
 const lightTheme: linkTheme = {
   color: "#C0D6DF",
-  hoverColor: "#98a8b5"
+  hoverColor: "#98a8b5",
+  dropColor: "#4f6d7a"
 }
 
 interface darkZones { [index: number]: number[] }
@@ -57,7 +60,8 @@ function getDarkZone(path: darkZones): number[]{
 }
 
 const Navbar = () => {
-  const [theme, setTheme] = useState(darkTheme);
+  const [theme, setTheme] = useState(window.location.pathname !== "/" ? lightTheme : darkTheme);
+  const [dropMenu, setDropMenu] = useState(false);
   useEffect(() => {
     let timeoutId = -1;
     window.addEventListener('scroll', () => {
@@ -72,12 +76,17 @@ const Navbar = () => {
   }, []);
   return (
     <ThemeProvider theme={theme}>
-      <NavList>
-        <NavItem>
+      <NavList dropMenu={dropMenu}>
+        <Hamburger dropMenu={dropMenu} onClick={() => setDropMenu(!dropMenu)}>
+          <HamLine/>
+          <HamLine/>
+          <HamLine/>
+        </Hamburger>
+        <NavItem dropMenu={dropMenu}>
           <StyledLink to="/">Portfolio</StyledLink>
           <Underline/>
         </NavItem>
-        <NavItem>
+        <NavItem dropMenu={dropMenu}>
           <Anchor href={Resume} target="_blank">Resume</Anchor>
           <Underline/>
         </NavItem>

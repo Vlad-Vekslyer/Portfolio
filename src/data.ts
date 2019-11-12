@@ -1,4 +1,6 @@
 import Crows from "./assets/Crows.png"
+import Crows2 from "./assets/Crows2.png"
+import Crows3 from "./assets/Crows3.png"
 import Charity from "./assets/Charity.png"
 import Charity2 from "./assets/Charity2.png"
 import Charity3 from "./assets/Charity3.png"
@@ -29,7 +31,7 @@ const data: {[index: string] : Description} = {
     demoLink: "https://the-crows.herokuapp.com/",
     githubLink: "https://github.com/Vlad-Vekslyer/The-Crows",
     tools: ["HTML5", "CSS3", "TypeScript", "React", "Node.js", "Express.js", "MySQL"],
-    album: [Crows],
+    album: [Crows, Crows2, Crows3],
     features: ["Dozen outcomes to each event", "Easy Content Creation", "Hidden cards to discover", "Story reacts to your choices"],
     difficulties: [`There needed to be a deep understanding of how the different elements of the game interacted with each other. Each card in the game is just an abstraction(such as Espionage) that changes in meaning and outcome depending on the current story.`,
   `This idea was easy enough for me to quickly come up with, but understanding how to translate that into an application was much harder.`],

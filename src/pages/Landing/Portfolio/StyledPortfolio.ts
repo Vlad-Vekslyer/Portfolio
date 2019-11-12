@@ -3,7 +3,7 @@ import breakpoints from "../../../global/styles/breakpoins"
 
 const Container = styled.div`
   width: 100%;
-  background: linear-gradient(180deg, #EAEAEA 100%, #C0D6DF 0%);
+  background: linear-gradient(180deg, #EAEAEA 0%, #C0D6DF 100%);
   font-size: 1.5em;
 `
 

@@ -2,7 +2,15 @@ import styled, {keyframes} from "styled-components"
 import {Link} from "react-router-dom"
 import breakpoints from "../styles/breakpoins"
 
-const NavList = styled.ul`
+const hoverAnim = keyframes`
+  from {
+    width: 0;
+  } to {
+    width: 100%;
+  }
+`
+
+const NavList = styled('ul')<{dropMenu: boolean}>`
   transition: color 500ms;
   display: flex;
   z-index: 2;
@@ -16,23 +24,48 @@ const NavList = styled.ul`
   @media (max-width: ${breakpoints.medium}) {
     right: 0;
   }
+  @media (max-width: ${breakpoints.small}) {
+    background-color: ${props => props.dropMenu ? props.theme.color : "none"};
+    color: ${props => props.dropMenu ? props.theme.dropColor : props.theme.color};
+    flex-direction: ${props => props.dropMenu ? "row-reverse" : "row"};
+    animation: ${props => props.dropMenu ? hoverAnim : "none"};
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+    padding: 8px;
+    top: 0;
+    align-items: center;
+    border-radius: 4px 0 0 4px;
+  }
 `
 
-const NavItem = styled.li`
+const NavItem = styled('li')<{dropMenu: boolean}>`
   margin-right: 15px;
   color: inherit;
   :hover {
     color: ${props => props.theme.hoverColor};
     cursor: pointer;
   }
+  @media (max-width: ${breakpoints.small}) {
+    display: ${props => props.dropMenu ? "inline-block" : "none"};
+    margin-right: 35px;
+  }
 `
 
-const hoverAnim = keyframes`
-  from {
-    width: 0;
-  } to {
-    width: 100%;
+const Hamburger = styled(NavItem)`
+  display: none;
+
+  @media (max-width: ${breakpoints.small}){
+    display: inline-block;
+    margin-right: 10px;
   }
+`
+
+const HamLine = styled.hr`
+  display: block;
+  width: 20px;
+  margin-bottom: 4px;
+  border: 2px solid;
+  color: inherit;
 `
 
 const Anchor = styled.a`
@@ -48,10 +81,12 @@ const StyledLink = styled(Link)`
 const Underline = styled.hr`
   display: none;
   color: inherit;
-  ${NavItem}:hover &{
-    display: block;
-    animation: ${hoverAnim} 300ms linear forwards;
+  @media (min-width: ${breakpoints.small}){
+    ${NavItem}:hover &{
+      display: block;
+      animation: ${hoverAnim} 300ms linear forwards;
+    }
   }
 `
 
-export {NavList, NavItem, Underline, StyledLink, Anchor}
+export {NavList, NavItem, Underline, StyledLink, Anchor, Hamburger, HamLine}
