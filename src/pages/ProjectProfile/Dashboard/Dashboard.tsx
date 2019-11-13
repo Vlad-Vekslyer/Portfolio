@@ -7,7 +7,7 @@ import {WhiteStripe, StyledButton} from "../../../global/styles/StyledButton"
 const Anchor = (props: {url: string, body : string, isMobile?: boolean}) => {
   return (
     <>
-      <StyledAnchor isMobile={props.isMobile} href={props.url}>
+      <StyledAnchor isMobile={props.isMobile} target="__blank" href={props.url}>
         {props.body}
         <StyledButton style={{width: "100%", height: "100%", position:"absolute", top: 0, left: 0}}>
           <WhiteStripe width="100%" height="100%" rx="4" stroke="#FFFFFF" strokeWidth="5" fill="none"/>

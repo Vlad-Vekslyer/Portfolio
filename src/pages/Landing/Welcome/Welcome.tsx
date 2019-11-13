@@ -22,7 +22,7 @@ function Welcome(){
       </SidePanel>
       <Container ref={scrollUp}>
         <Header>
-          <Typing speed={10}>
+          <Typing speed={25}>
             <h1 style={{lineHeight: "1em"}}>VLADYSLAV VEKSLYER</h1>
             <h2 style={{lineHeight: "1em"}}>Highly motivated • Team-oriented</h2>
             <h2 style={{lineHeight: "1em"}}>Full-stack developer</h2>
