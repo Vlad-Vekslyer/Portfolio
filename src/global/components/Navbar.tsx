@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react"
 import {ThemeProvider} from "styled-components"
 import {NavList, NavItem, Underline, StyledLink, Anchor, Hamburger, HamLine} from "./StyledNavbar"
 import Resume from "../../assets/Resume.pdf"
+import getScreenSpecs from "../getScreenSpecs"
 
 interface linkTheme {
   color: string,
@@ -22,7 +23,6 @@ const lightTheme: linkTheme = {
 }
 
 interface darkZones { [index: number]: number[] }
-
 
 // returns the areas where the background is dark
 function supplyDarkZones(){
@@ -67,7 +67,7 @@ const Navbar = () => {
     window.addEventListener('scroll', () => {
       clearTimeout(timeoutId);
       timeoutId = setTimeout(() => {
-        let darkZone = getPath(getDarkZone);
+        let darkZone = getPath(getScreenSpecs);
         let position = window.scrollY;
         if(position >= darkZone[0] && position <= darkZone[1]) setTheme(lightTheme);
         else setTheme(darkTheme);
@@ -83,7 +83,7 @@ const Navbar = () => {
           <HamLine/>
         </Hamburger>
         <NavItem dropMenu={dropMenu}>
-          <StyledLink to="/">Portfolio</StyledLink>
+          <StyledLink to="/">Home</StyledLink>
           <Underline/>
         </NavItem>
         <NavItem dropMenu={dropMenu}>

@@ -1,8 +1,9 @@
-import React, {useRef} from "react"
+import React, {useRef, useEffect} from "react"
 import styled from "styled-components"
+import breakpoints from "../../../global/styles/breakpoins"
+import getScreenSpecs from "../../../global/getScreenSpecs"
 
 const Container = styled.div`
-  position: relatize;
   z-index: 1;
   width: 70px;
   height: 70px;
@@ -21,6 +22,10 @@ const Container = styled.div`
     border-bottom: 3px solid #4f6d7a;
     border-radius: 0 0 15px 0;
   }
+  @media (max-width:${breakpoints.small}){
+    width: 60px;
+    height: 60px;
+  }
 `
 
 const MessageContainer = styled(Container)`
@@ -29,12 +34,19 @@ const MessageContainer = styled(Container)`
   border-top: 2px solid #4f6d7a;
   width: initial;
   transform: translateX(-245px);
+  @media (max-width: ${breakpoints.small}){
+    transform: translateX(-236px);
+    width: initial;
+  }
 `
 
 const Message = styled.p`
   color: white;
   margin: 0 10px;
   font-size: 1.3em;
+  @media (max-width: ${breakpoints.small}){
+    font-size: 1.25em;
+  }
 `
 
 const Icon = styled.img`
@@ -49,19 +61,39 @@ const Link = styled.a`
   width: 50px;
   height: 50px;
   margin-right: 10px;
+  @media (max-width: ${breakpoints.small}){
+    width: 40px;
+    height: 40px;
+  }
 `
+
+const translations = {
+  768: [-245],
+  100: [-236]
+}
 
 function SideItem(props: {image:any, link?: string, message?: string}){
   const messageContainer: React.MutableRefObject<null | HTMLDivElement> = useRef(null);
   const revealMessage = () => {
     if(messageContainer.current){
       switch(messageContainer.current.style.transform){
-        case "translateX(-245px)" : messageContainer.current.style.transform = "translateX(0px)"; break;
-        case "translateX(0px)": messageContainer.current.style.transform = "translateX(-245px)"; break;
+        case `translateX(${getScreenSpecs(translations)[0]}px)` : messageContainer.current.style.transform = "translateX(0px)"; break;
+        case "translateX(0px)": messageContainer.current.style.transform = `translateX(${getScreenSpecs(translations)[0]}px)`; break;
         default : messageContainer.current.style.transform = "translateX(0px)"; break;
       }
     }
   }
+  useEffect(() => {
+    let timeoutId = -1;
+    window.addEventListener('resize', () => {
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => {
+        if(messageContainer.current){
+          messageContainer.current.style.transform = `translateX(${getScreenSpecs(translations)[0]}px)`;
+        }
+      }, 150);
+    });
+  }, [])
   return(
     <>
       {!props.message ? (

@@ -43,7 +43,10 @@ const SidePanel = styled.aside`
   flex-direction:column;
   position: absolute;
   float:left;
-  margin-top: 65vh;
+  margin-top: 35vh;
+  @media (max-width: ${breakpoints.small}) {
+    margin-top: 65vh;
+  }
 `
 
 export {Container, Header, SidePanel}
