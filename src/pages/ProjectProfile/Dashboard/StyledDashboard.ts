@@ -40,7 +40,6 @@ const ToolsContainer = styled.div`
 
 const StyledAnchor = styled('a')<{isMobile?: boolean}>`
   position: relative;
-  height: 46px;
   padding: 10px 10px;
   box-sizing: border-box;
   text-decoration: none;
