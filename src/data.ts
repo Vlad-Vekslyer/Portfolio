@@ -6,6 +6,9 @@ import Charity2 from "./assets/Charity2.png"
 import Charity3 from "./assets/Charity3.png"
 import Charity4 from "./assets/Charity4.png"
 import Doggy from "./assets/Doggy.png"
+import Doggy2 from "./assets/Doggy2.png"
+import Doggy3 from "./assets/Doggy3.png"
+import Doggy4 from "./assets/Doggy4.png"
 
 export interface Description {
   readonly name: string,
@@ -71,7 +74,7 @@ const data: {[index: string] : Description} = {
   to showcase the dogs that need to be adopted.`,
     githubLink: "https://github.com/Vlad-Vekslyer/VanHack-2019",
     tools: ["React Native","JavaScript", "Node.js", "Express.js", "MongoDB"],
-    album: [Doggy],
+    album: [Doggy, Doggy2, Doggy3, Doggy4],
     features: ["Walk Scheduling", "Walk Meetups", "Dog Index", "Dog Profiles"],
     difficulties: [`Since It was my first time developing a mobile app and we had to finish the application in 36 hours for the hackathon, many thing about React Native were catching me off guard such as how the layout works.`,
   `Another difficulty we had as a team was deciding what exactly we will be developing: New ideas were often brought up by the team but decisions about our application were not being finalized.`],
