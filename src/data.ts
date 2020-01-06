@@ -9,6 +9,10 @@ import Doggy from "./assets/Doggy.png"
 import Doggy2 from "./assets/Doggy2.png"
 import Doggy3 from "./assets/Doggy3.png"
 import Doggy4 from "./assets/Doggy4.png"
+import TriTech from "./assets/tri-tech.png"
+import TriTech2 from "./assets/tri-tech2.png"
+import TriTech3 from "./assets/tri-tech3.png"
+import TriTech4 from "./assets/tri-tech4.png"
 
 export interface Description {
   readonly name: string,
@@ -80,6 +84,22 @@ const data: {[index: string] : Description} = {
   `Another difficulty we had as a team was deciding what exactly we will be developing: New ideas were often brought up by the team but decisions about our application were not being finalized.`],
     solutions: [`I managed to get over my own blockers with React Native by communicating with the team about my confusions with the framework. I've found that communication was a much better way for me to get over my blockers since my team understood that I was coming from a web development background. My team could quickly explain to me what parts of my knowledge don't apply to mobile development.`,
   `To help unblock the team during our brainstorming, I recognized the lack of concrete decisions being made about the application and directed the discussion towards desicion-making. I did so by calling for a vote whenever a big decision had to be made, stirring the conversation away from any off-topic discussions and announcing any final decisions being made in order to move on to the next topic.`]
+  },
+
+
+  "tri-tech": {
+    name: "Tri Tech",
+    body: `A website for a fictional tech consulting company named Tri-Tech Co. This project was done in a team setting using Git with a deadline to simulate a real-life project.
+  Primarily, the website is meant to convey to visitors what Tri-Tech is and to provide an insight on the people who run the company.`,
+    demoLink: "https://lucid-benz-f12be9.netlify.com/",
+    githubLink: "https://github.com/Vlad-Vekslyer/tri-tech",
+    tools: ["HTML5", "Sass","React", "JavaScript", "Git"],
+    album: [TriTech, TriTech2, TriTech3, TriTech4],
+    features: ["Responsive", 'Interactive Advisory Network', 'Contact Form', 'Press Section'],
+    difficulties: [`With a two week window to complete the project, the development needed to be going as smooth as possible in order to insure both stability and quality by the deadline`],
+    solutions: [`Project guidelines were setup, the overall structure of the project was clearly defined and the workload was divided into isolated pages. This approach allowed team members to focus on their own page while keeping the integration of the pages later on simple.
+  Using Git, team members had to create their own feature branch and then submit pull requests. I would review the code to make sure it complies with the guidelines, that it's overall readable and that it doesn't conflict with any other code in the program.
+  In addition, communication was established between the team members to insure that each member is fully aware of what everyone is doing.`]
   }
 }
 
