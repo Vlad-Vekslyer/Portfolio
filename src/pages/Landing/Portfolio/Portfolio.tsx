@@ -9,10 +9,11 @@ function Portfolio(){
     <Container>
       <Header>Portfolio</Header>
       <Projects>
+        <Project desc={data["blog-pub"]}/>
         <Project desc={data["the-crows"]}/>
-        <Project desc={data["bc-charity-portal"]}/>
         <Project desc={data["go-doggy"]} isMobile={true}/>
         <Project desc={data["tri-tech"]}/>
+        <Project desc={data["bc-charity-portal"]}/>
       </Projects>
     </Container>
   )

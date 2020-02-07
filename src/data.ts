@@ -13,6 +13,9 @@ import TriTech from "./assets/tri-tech.png"
 import TriTech2 from "./assets/tri-tech2.png"
 import TriTech3 from "./assets/tri-tech3.png"
 import TriTech4 from "./assets/tri-tech4.png"
+import Blog from "./assets/Blog.png"
+import Blog2 from "./assets/Blog2.png"
+import Blog3 from "./assets/Blog3.png"
 
 export interface Description {
   readonly name: string,
@@ -100,6 +103,26 @@ const data: {[index: string] : Description} = {
     solutions: [`Project guidelines were setup, the overall structure of the project was clearly defined and the workload was divided into isolated pages. This approach allowed team members to focus on their own page while keeping the integration of the pages later on simple.
   Using Git, team members had to create their own feature branch and then submit pull requests. I would review the code to make sure it complies with the guidelines, that it's overall readable and that it doesn't conflict with any other code in the program.
   In addition, communication was established between the team members to insure that each member is fully aware of what everyone is doing.`]
+  },
+
+  "blog-pub": {
+    name: "Blog Pub",
+    body: `Blog Pub is a community-sourced newsletter website where users can collaborate together to create articles written with the different perspectives of the users that contributed. Blog Pub provides agency to each contributor while maintaining systems that will help moderate the contributions.`,
+    demoLink: "https://blog-pub.herokuapp.com/",
+    githubLink: 'https://github.com/Vlad-Vekslyer/blog-pub',
+    tools: ['PHP', 'Nginx', 'MySQL', 'TensorFlow.js', 'HTML5', 'Sass', 'JavaScript', 'Express.js'],
+    album: [Blog, Blog2, Blog3],
+    features: ['Text editor written from scratch', 'AI-assisted moderation', 'Mobile-friendly design', 'Authentication'],
+    difficulties: [`Most of my backend experience came from using Node.js with the Express framework, which abstracts many parts of server-side code. Using plain PHP with Nginx as the web server challenged my perception of how the backend works, I found that some of my assumptions were invalid when I started working with Nginx.
+My second difficulty was building the text editor for Blog Pug. I've decided to challenge myself and build the text editor from scratch instead of using the built-in tools to create the text editor. Another reason to do this was because the built-in tools were deprecated.
+Lastly, I was a newcomer to AI, and using machine learning with PHP was problematic due to the lack of well-documented and optimized machine-learning libraries for PHP.`],
+    solutions: [`After following a tutorial to get PHP and Nginx setup, and exploring enough of Nginx's configuration to get a rough idea of how Nginx works, I started to look for opportunities in my project to utilize Nginx more. I changed my root folder structure, setup SSL locally, put my Node server behind a reverse proxy, handled CORS all via Nginx. The more robust I made my Nginx server, the more I understood it.
+To circumvent PHP's limited AI support, I decided to add a Note+Express server to my stack in order to use Tensorflow.js. Another reason for adding Node to the stack instead of using Tensorflow.js in the frontend was that the AI was meant to assist in the website's moderation and therefore it would be a security risk to have it exposed to the public. Before I even started using Tensorflow, I took the time to learn some of the concepts and math behind machine learning algorithms.
+It was important to me to have a conceptual and partially technical understanding of AI before using it. Implementing and using Tensorflow's pre-trained models was a straightforward process from there.
+Creating the text editor was an especially difficult process, I've decided to create my own syntax which I will wrap around text that was selected in the front end which would then be sent to the backend to be escaped and processed into HTML markup.
+Processing custom syntax into HTML was a straightforward solution in the backend. For the frontend, I had to do a lot of research on DOM Selections,Nodes and Ranges in order to pick out the coordinates of the text that was selected.
+Properly wrapping the selected text required me to research Regular Expressions in more detail and to come up with a fool-proof algorithm to always wrap the selected text appropriatly. I took the opportunity to also implement the algorithm using functional programming.
+At the end, creating the text editor helped me gain a deeper understanding of the DOM, Regular Expression and Functional Programming.`]
   }
 }
 
