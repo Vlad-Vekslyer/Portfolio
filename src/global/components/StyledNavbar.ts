@@ -16,7 +16,7 @@ const NavList = styled('ul')<{dropMenu: boolean}>`
   z-index: 2;
   list-style: none;
   padding: 0;
-  font-size: 18px;
+  font-size: 22px;
   position: fixed;
   right: 4%;
   top: 15px;
