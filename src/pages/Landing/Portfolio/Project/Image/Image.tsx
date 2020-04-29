@@ -14,10 +14,11 @@ function Description(props: {desc: DescInterface, parentClicked: boolean, isMobi
         {props.desc.demoLink ?
           <AnchorSpan>
             <Anchor target="__blank" href={props.desc.demoLink}>Visit Site</Anchor>
-          </AnchorSpan>: null}
-        <AnchorSpan>
-          <Anchor target="__blank" href={props.desc.githubLink}>Github</Anchor>
-        </AnchorSpan>
+          </AnchorSpan> : null}
+        {props.desc.githubLink ?
+          <AnchorSpan>
+            <Anchor target="__blank" href={props.desc.githubLink}>Github</Anchor>
+          </AnchorSpan> : null}
         <AnchorSpan>
           <StyledLink to={profileLink}>Learn More</StyledLink>
         </AnchorSpan>

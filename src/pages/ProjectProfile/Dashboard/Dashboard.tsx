@@ -31,13 +31,17 @@ const Dashboard = (props: {desc: Description, isMobile: boolean}) => {
   let tools = props.desc.tools.map((tool, index) => (<p key={index}>- {tool}</p>))
   return(
     <Container>
-      <AnchorsContainer>
-        {props.desc.demoLink ? <Anchor body="Website" url={props.desc.demoLink}/> : null}
-        <Anchor isMobile={props.isMobile} body="Github" url={props.desc.githubLink}/>
-      </AnchorsContainer>
-      <ToolsContainer>
-          {tools}
-      </ToolsContainer>
+      <div>
+        {props.desc.demoLink || props.desc.githubLink ?
+          <AnchorsContainer>
+            {props.desc.demoLink ? <Anchor body="Website" url={props.desc.demoLink}/> : null}
+            {props.desc.githubLink ? <Anchor isMobile={props.isMobile} body="Github" url={props.desc.githubLink ? props.desc.githubLink : ''}/> : null }
+          </AnchorsContainer>
+        : <p style={{marginTop: 15, marginBottom: 15, fontWeight: 'bold'}}>Links are provided on-request</p> }
+        <ToolsContainer>
+            {tools}
+        </ToolsContainer>
+      </div>
       <SlidesContainer>
         <Slider arrows={window.innerWidth > 768 ? false : true} dots={window.innerWidth > 768 ? true : false} autoplay={true} autoplaySpeed={5000} slidesToShow={1} speed={500}>
           {slides}

@@ -5,7 +5,6 @@ import breakpoints from "../../../global/styles/breakpoins"
 const Container = styled.div`
   display: grid;
   grid-template-columns: 15% 85%;
-  grid-template-rows: 25% 50% 25%;
   grid-row-gap: 25px;
   height: 375px;
   @media (max-width: ${breakpoints.small}){
@@ -25,14 +24,11 @@ const Slide = styled('div')<{image: any, isMobile: boolean}>`
 `
 
 const SlidesContainer = styled.div`
-  grid-column-start: 2;
   height: 100%;
   box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.25);
 `
 
 const ToolsContainer = styled.div`
-  grid-row-start: 2;
-  grid-row-end: 4;
   @media (max-width: ${breakpoints.small}){
     display: none;
   }
@@ -52,7 +48,7 @@ const StyledAnchor = styled('a')<{isMobile?: boolean}>`
   font-weight: bold;
   color: #FFFFFF;
   @media (max-width: ${breakpoints.small}){
-    width: ${props => props.isMobile ? "100%" : "50%"};
+    width: ${props => props.isMobile ? "100%" : "45%"};
   }
 `
 
@@ -60,6 +56,7 @@ const AnchorsContainer = styled.div`
   display: flex;
   flex-direction: column;
   @media (max-width: ${breakpoints.small}) {
+    justify-content: space-between;
     flex-direction: row;
     margin-top: 15px;
   }

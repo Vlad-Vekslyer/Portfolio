@@ -16,12 +16,13 @@ import TriTech4 from "./assets/tri-tech4.png"
 import Blog from "./assets/Blog.png"
 import Blog2 from "./assets/Blog2.png"
 import Blog3 from "./assets/Blog3.png"
+import Brickhouse from "./assets/Brickhouse.png"
 
 export interface Description {
   readonly name: string,
   readonly body: string,
   readonly demoLink?: string,
-  readonly githubLink: string,
+  readonly githubLink?: string,
   readonly tools: string[],
   readonly album: any[],
   readonly features: string[],
@@ -110,7 +111,7 @@ const data: {[index: string] : Description} = {
     body: `Blog Pub is a community-sourced newsletter website where users can collaborate together to create articles written with the different perspectives of the users that contributed. Blog Pub provides agency to each contributor while maintaining systems that will help moderate the contributions.`,
     demoLink: "https://blog-pub.herokuapp.com/",
     githubLink: 'https://github.com/Vlad-Vekslyer/blog-pub',
-    tools: ['PHP', 'Nginx', 'MySQL', 'TensorFlow.js', 'HTML5', 'Sass', 'JavaScript', 'Express.js'],
+    tools: ['PHP', 'Nginx', 'MySQL', 'TensorFlow', 'HTML5', 'SCSS', 'JavaScript', 'Express.js'],
     album: [Blog, Blog2, Blog3],
     features: ['Text editor written from scratch', 'AI-assisted moderation', 'Mobile-friendly design', 'Authentication'],
     difficulties: [`Most of my backend experience came from using Node.js with the Express framework, which abstracts many parts of server-side code. Using plain PHP with Nginx as the web server challenged my perception of how the backend works, I found that some of my assumptions were invalid when I started working with Nginx.`,
@@ -123,6 +124,24 @@ It was important to me to have a conceptual and partially technical understandin
 Processing custom syntax into HTML was a straightforward solution in the backend. For the frontend, I had to do a lot of research on DOM Selections,Nodes and Ranges in order to pick out the coordinates of the text that was selected.`,
 `Properly wrapping the selected text required me to research Regular Expressions in more detail and to come up with a fool-proof algorithm to always wrap the selected text appropriatly. I took the opportunity to also implement the algorithm using functional programming.
 At the end, creating the text editor helped me gain a deeper understanding of the DOM, Regular Expression and Functional Programming.`]
+},
+
+  "brickhouse-ventures": {
+    name: "Brickhouse Ventures",
+    body: "The Brickhouse Ventures website is a volunteer client project for a venture capital startup in Vancouver done in collaboration with my classmates. At the request of the company, we only send the link to the full website on-request",
+    tools: ['React', 'TypeScript', 'SCSS', 'Netlify CMS'],
+    album: [Brickhouse],
+    features: ['Clean design', 'Integrated CMS', 'Form submission', 'Responsive'],
+    difficulties: [`While we had the design for the desktop pages, we didn't have the the phone and tablet design for the website. And had to rely on our own intuition and design knowledge to make the website responsive`,
+`Writing the network section was a big challenge. It required careful attention to the design details while styling.
+The network section also required careful consideration of its display logic; advisors needed to be grouped according to their city and split into separate pages all while accounting the screen size.
+Smaller screen sizes meant less advisors showing on the screen but more pages to browse through`],
+    solutions: [`We've decided to go with tried and tested responsive design ideas such as using column-based layouts and a hamburger bar.
+    While there was room for more creative designs for smaller screen sizes, we've kept in mind that the website is going to be the face of a business and therefore should use design ideas that are the most widely accepted as professional.`,
+`The network design had many details, from a multi-layered background to frequent font changes. To accuratly style the section according to the design, I separated each part of the UI and rendered it in isolation to compare the UI in the design as I worked on the styling.
+After each UI component faithfully followed the design, I put it all together and simply followed the layout that was in the design.
+To address the dynamic advisor pages, I've wrote a set of functions that can be called to calculate how many advisors should appear in a page, how many pages should there be, and what current advisors should be shown. All the functions factored the current screen size when calculating.
+After creating the functions, I simply had to call these functions again whenever the screen size change beyond certain thresholds.`]
   }
 }
 
