@@ -7,7 +7,7 @@ function Description(props: {desc: DescInterface, parentClicked: boolean, isMobi
     `/projects/${props.desc.name.toLowerCase().replace(/ /g, '-')}` :
     `/projects/${props.desc.name.toLowerCase().replace(/ /g, '-')}?mobile=1`;
   return(
-    <DescriptionContainer parentClicked={props.parentClicked}>
+    <DescriptionContainer style={{opacity: props.parentClicked === false ? "0" : "0.92"}}>
       <Title>{props.desc.name}</Title>
       <Body>{props.desc.body}</Body>
       <Anchors>
@@ -27,7 +27,13 @@ function Description(props: {desc: DescInterface, parentClicked: boolean, isMobi
   )
 }
 
-function Image(props: {isMobile?: boolean, desc: DescInterface, parentClicked: boolean}){
+interface ImageProps {
+  isMobile?: boolean,
+  desc: DescInterface,
+  parentClicked: boolean
+}
+
+function Image(props: ImageProps){
   return(
     <Container isMobile={props.isMobile} image={props.desc.album[0]}>
         <Description isMobile={props.isMobile} parentClicked={props.parentClicked} desc={props.desc}/>

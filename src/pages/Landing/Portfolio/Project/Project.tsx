@@ -11,7 +11,7 @@ interface ToolsProps {
 function Tools(props: ToolsProps){
   let tools = props.tools.map((tool, index) => <Tool key={index}>{tool}</Tool>)
   return(
-    <ToolsContainer parentClicked={props.parentClicked}>
+    <ToolsContainer style={{ bottom: props.parentClicked ? 0 : 100, zIndex: props.parentClicked ? 0 : -1 }} parentClicked={props.parentClicked}>
       {tools}
     </ToolsContainer>
   )
@@ -25,7 +25,10 @@ interface ProjectProps {
 function Project(props: ProjectProps){
   const [isClicked, setClicked] = useState(false);
   return(
-    <Container onTouchEnd = {() => setClicked(!isClicked)}>
+    <Container
+      onMouseEnter={() => setClicked(true)}
+      onMouseLeave={() => setClicked(false)}
+      onTouchStart = {() => setClicked(!isClicked)}>
       <Image parentClicked={isClicked} isMobile={props.isMobile} desc={props.desc}/>
       <Tools parentClicked={isClicked} tools={props.desc.tools}/>
     </Container>

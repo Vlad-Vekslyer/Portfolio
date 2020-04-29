@@ -23,7 +23,7 @@ const DescriptionContainer = styled('div')<{parentClicked?: boolean}>`
   height: 100%;
   width: 100%;
   display: inline-block;
-  opacity: ${props => props.parentClicked ? "0.92" : "0"};
+  opacity: 0;
   background: rgb(51, 66, 79);
   ${ProjectContainer}: hover & {
     opacity: 0.92;

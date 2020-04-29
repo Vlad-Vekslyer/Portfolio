@@ -12,8 +12,8 @@ const ToolsContainer = styled('div')<{parentClicked?: boolean}>`
   transition: bottom 500ms;
   background-color: rgba(11, 30, 8, 0.05);
   position: relative;
-  bottom: ${props => props.parentClicked ? "0" : "100px"};
-  z-index: ${props => props.parentClicked ? "0" : "-1"};
+  bottom: 100px;
+  z-index: -1;
   ${Container}:hover &{
     bottom: 0;
     z-index: 0;
