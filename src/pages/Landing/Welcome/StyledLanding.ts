@@ -45,7 +45,7 @@ const SidePanel = styled.aside`
   float:left;
   margin-top: 35vh;
   @media (max-width: ${breakpoints.small}) {
-    margin-top: 65vh;
+    margin-top: 60vh;
   }
 `
 

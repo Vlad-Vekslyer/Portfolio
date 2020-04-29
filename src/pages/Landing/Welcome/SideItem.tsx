@@ -23,8 +23,8 @@ const Container = styled.div`
     border-radius: 0 0 15px 0;
   }
   @media (max-width:${breakpoints.small}){
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
   }
 `
 
@@ -35,7 +35,7 @@ const MessageContainer = styled(Container)`
   width: initial;
   transform: translateX(-245px);
   @media (max-width: ${breakpoints.small}){
-    transform: translateX(-236px);
+    transform: translateX(-241px);
     width: initial;
   }
 `
@@ -62,14 +62,14 @@ const Link = styled.a`
   height: 50px;
   margin-right: 10px;
   @media (max-width: ${breakpoints.small}){
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
   }
 `
 
 const translations = {
   768: [-245],
-  100: [-236]
+  100: [-241]
 }
 
 function SideItem(props: {image:any, link?: string, message?: string}){
