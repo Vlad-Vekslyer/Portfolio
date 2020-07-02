@@ -113,7 +113,7 @@ const data: {[index: string] : Description} = {
     githubLink: 'https://github.com/Vlad-Vekslyer/blog-pub',
     tools: ['PHP', 'Nginx', 'MySQL', 'TensorFlow', 'HTML5', 'SCSS', 'JavaScript', 'Express.js'],
     album: [Blog, Blog2, Blog3],
-    features: ['Text editor written from scratch', 'AI-assisted moderation', 'Mobile-friendly design', 'Authentication'],
+    features: ['Text editor written from scratch', 'AI-assisted moderation', 'Responsive', 'Authentication'],
     difficulties: [`Most of my backend experience came from using Node.js with the Express framework, which abstracts many parts of server-side code. Using plain PHP with Nginx as the web server challenged my perception of how the backend works, I found that some of my assumptions were invalid when I started working with Nginx.`,
 `My second difficulty was building the text editor for Blog Pug. I've decided to challenge myself and build the text editor from scratch instead of using the built-in tools to create the text editor. Another reason to do this was because the built-in tools were deprecated.`,
 `Lastly, I was a newcomer to AI, and using machine learning with PHP was problematic due to the lack of well-documented and optimized machine-learning libraries for PHP.`],
@@ -131,7 +131,7 @@ At the end, creating the text editor helped me gain a deeper understanding of th
     body: "The Brickhouse Ventures website is a volunteer client project for a venture capital startup in Vancouver done in collaboration with my classmates. At the request of the company, we only send the link to the full website on-request",
     tools: ['React', 'TypeScript', 'SCSS', 'Netlify CMS'],
     album: [Brickhouse],
-    features: ['Clean design', 'Integrated CMS', 'Form submission', 'Responsive'],
+    features: ['Clean design', 'Integrated CMS', 'Contact Form', 'Responsive'],
     difficulties: [`While we had the design for the desktop pages, we didn't have the the phone and tablet design for the website. And had to rely on our own intuition and design knowledge to make the website responsive`,
 `Writing the network section was a big challenge. It required careful attention to the design details while styling.
 The network section also required careful consideration of its display logic; advisors needed to be grouped according to their city and split into separate pages all while accounting the screen size.
@@ -142,6 +142,13 @@ Smaller screen sizes meant less advisors showing on the screen but more pages to
 After each UI component faithfully followed the design, I put it all together and simply followed the layout that was in the design.
 To address the dynamic advisor pages, I've wrote a set of functions that can be called to calculate how many advisors should appear in a page, how many pages should there be, and what current advisors should be shown. All the functions factored the current screen size when calculating.
 After creating the functions, I simply had to call these functions again whenever the screen size change beyond certain thresholds.`]
+},
+
+  "hr-mental-wellness": {
+    name: "HR Mental Wellness",
+    body: "A volunteer project to remake a WordPress website for a non-profit organization located in Vancouver, BC. The HR Mental Wellness Centre provides individual and group coaching with a focus on spirituality.",
+    tools: ['PHP', 'WordPress', 'HTML5', 'CSS3'],
+    features: ['Responsive', 'Highly customizable', 'Blog section', 'Contact Form']
   }
 }
 
