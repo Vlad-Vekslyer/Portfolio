@@ -12,7 +12,7 @@ function Portfolio(){
         <Project desc={data["blog-pub"]}/>
         <Project desc={data["the-crows"]}/>
         <Project desc={data["brickhouse-ventures"]}/>
-        <Project desc={data["tri-tech"]}/>
+        <Project desc={data["hr-mental-wellness"]}/>
         <Project desc={data["go-doggy"]} isMobile={true}/>
       </Projects>
     </Container>

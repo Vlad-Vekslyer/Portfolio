@@ -152,8 +152,16 @@ After creating the functions, I simply had to call these functions again wheneve
     name: "HR Mental Wellness",
     body: "A volunteer project to remake a WordPress website for a non-profit organization located in Vancouver, BC. The HR Mental Wellness Centre provides individual and group coaching with a focus on spirituality.",
     tools: ['PHP', 'WordPress', 'HTML5', 'CSS3'],
+    githubLink: 'https://github.com/Vlad-Vekslyer/hr-mental-wellness',
+    demoLink: 'https://hr-metnal-wellness.000webhostapp.com/',
     features: ['Responsive', 'Highly customizable', 'Blog section', 'Contact Form'],
-    album: [HR, HR2, HR3, HR4]
+    album: [HR, HR2, HR3, HR4],
+    difficulties: [`I had no prior experience working with WordPress. Having previous experience working with PHP was useful but WordPress development was quite different than previous work I've done`,
+`I was the only person that was regularly working on this project. Which put me into roles that usually fall outside of development such as design and client relations. `],
+    solutions: [`To get used to WordPress, I started out by picking a free theme and making a child theme out of it. The parent theme served as a scaffolding to take care of aspects of the theme that I didn't learn yet while I worked on the website.
+    The more I understood WordPress, the more I modified my child theme to be less reliant on the parent theme until eventually I knew enough to completely get rid of the parent theme and upgrade my child theme into its own theme.`,
+`A weekly meeting with the founder of HR Mental Wellness was organized. I would present the progress that's been made on the website during that time and would hear the founder's thoughts on design decisions.
+Figuring out where to start with the website was difficult but the weekly feedback from the founder was extremely helpful in streeing the website into the right direction.`]
   }
 }
 
