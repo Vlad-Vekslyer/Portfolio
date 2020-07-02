@@ -13,12 +13,14 @@ const hoverAnim = keyframes`
 const NavList = styled('ul')<{dropMenu: boolean}>`
   transition: color 500ms;
   display: flex;
+  justify-content: space-between;
+  width: 175px;
   z-index: 2;
   list-style: none;
   padding: 0;
   font-size: 22px;
   position: fixed;
-  right: 4%;
+  left: 4%;
   top: 15px;
   color: ${props => props.theme.color};
   @media (max-width: ${breakpoints.medium}) {
@@ -39,7 +41,6 @@ const NavList = styled('ul')<{dropMenu: boolean}>`
 `
 
 const NavItem = styled('li')<{dropMenu: boolean}>`
-  margin-right: 15px;
   color: inherit;
   :hover {
     color: ${props => props.theme.hoverColor};
