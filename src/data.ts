@@ -17,6 +17,10 @@ import Blog from "./assets/Blog.png"
 import Blog2 from "./assets/Blog2.png"
 import Blog3 from "./assets/Blog3.png"
 import Brickhouse from "./assets/Brickhouse.png"
+import HR from "./assets/HR.png"
+import HR2 from "./assets/HR2.png"
+import HR3 from "./assets/HR3.png"
+import HR4 from "./assets/HR4.png"
 
 export interface Description {
   readonly name: string,
@@ -148,7 +152,8 @@ After creating the functions, I simply had to call these functions again wheneve
     name: "HR Mental Wellness",
     body: "A volunteer project to remake a WordPress website for a non-profit organization located in Vancouver, BC. The HR Mental Wellness Centre provides individual and group coaching with a focus on spirituality.",
     tools: ['PHP', 'WordPress', 'HTML5', 'CSS3'],
-    features: ['Responsive', 'Highly customizable', 'Blog section', 'Contact Form']
+    features: ['Responsive', 'Highly customizable', 'Blog section', 'Contact Form'],
+    album: [HR, HR2, HR3, HR4]
   }
 }
 
