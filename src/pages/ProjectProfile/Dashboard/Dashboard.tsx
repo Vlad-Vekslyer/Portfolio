@@ -43,7 +43,7 @@ const Dashboard = (props: {desc: Description, isMobile: boolean}) => {
         </ToolsContainer>
       </div>
       <SlidesContainer>
-        <Slider arrows={window.innerWidth > 768 ? false : true} dots={window.innerWidth > 768 ? true : false} autoplay={true} autoplaySpeed={5000} slidesToShow={1} speed={500}>
+        <Slider className="hi" arrows={window.innerWidth > 768 ? false : true} dots={window.innerWidth > 768 ? true : false} autoplay={true} autoplaySpeed={5000} slidesToShow={1} speed={500}>
           {slides}
         </Slider>
       </SlidesContainer>

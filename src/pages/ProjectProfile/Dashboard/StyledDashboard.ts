@@ -20,12 +20,12 @@ const Slide = styled('div')<{image: any, isMobile: boolean}>`
   background: url(${props => props.image}) ,url(${props => props.isMobile ? Background : "none"});
   background-size: ${props => props.isMobile ? "contain, cover" : "cover"};
   background-repeat: no-repeat;
-  background-position: ${props => props.isMobile ? "center" : "initial"};
+  background-position-x: center;
+  background-position-y: initial;
 `
 
 const SlidesContainer = styled.div`
   height: 100%;
-  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.25);
 `
 
 const ToolsContainer = styled.div`
