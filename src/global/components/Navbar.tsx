@@ -50,14 +50,14 @@ function getPath(cb: (path: darkZones) => number[]): number[]{
 }
 
 // get the dark background coordinates depending on the screen size
-function getDarkZone(path: darkZones): number[]{
-  let sizes = Object.getOwnPropertyNames(path);
-  for(let i = sizes.length - 1; i > -1; i --){
-    let size = parseInt(sizes[i])
-    if(window.innerWidth >= size) { return path[size] }
-  }
-  throw new Error("Invalid Path");
-}
+// function getDarkZone(path: darkZones): number[]{
+//   let sizes = Object.getOwnPropertyNames(path);
+//   for(let i = sizes.length - 1; i > -1; i --){
+//     let size = parseInt(sizes[i])
+//     if(window.innerWidth >= size) { return path[size] }
+//   }
+//   throw new Error("Invalid Path");
+// }
 
 const Navbar = () => {
   const [theme, setTheme] = useState(window.location.pathname !== "/" ? lightTheme : darkTheme);
